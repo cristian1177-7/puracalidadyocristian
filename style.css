@@ -1,0 +1,524 @@
+/* =====================================================
+   VARIABLES GENERALES
+   ===================================================== */
+
+:root {
+
+    --background: #111111;
+
+    --panel: #1c1c1c;
+
+    --text: #ffffff;
+
+    --secondary-text: #cccccc;
+
+    --border: #ffffff;
+
+    --button: #3498db;
+
+    --button-hover: #2980b9;
+
+    --board: #000000;
+
+    --grid-color: rgba(255, 255, 255, 0.08);
+
+
+    --piece-I: #00ffff;
+
+    --piece-O: #ffff00;
+
+    --piece-T: #800080;
+
+    --piece-L: #ff7f00;
+
+    --piece-J: #0000ff;
+
+    --piece-S: #00ff00;
+
+    --piece-Z: #ff0000;
+}
+
+
+/* =====================================================
+   SET 1 - CLÁSICO
+   ===================================================== */
+
+body.set-clasico {
+
+    --background: #111111;
+
+    --panel: #1c1c1c;
+
+    --text: #ffffff;
+
+    --secondary-text: #cccccc;
+
+    --border: #ffffff;
+
+    --button: #3498db;
+
+    --button-hover: #2980b9;
+
+    --board: #000000;
+
+    --grid-color: rgba(255, 255, 255, 0.08);
+
+    --piece-I: #00ffff;
+
+    --piece-O: #ffff00;
+
+    --piece-T: #800080;
+
+    --piece-L: #ff7f00;
+
+    --piece-J: #0000ff;
+
+    --piece-S: #00ff00;
+
+    --piece-Z: #ff0000;
+}
+
+
+/* =====================================================
+   SET 2 - ESPACIAL
+   ===================================================== */
+
+body.set-espacial {
+
+    --background: #05051a;
+
+    --panel: #101044;
+
+    --text: #ffffff;
+
+    --secondary-text: #b8c7ff;
+
+    --border: #6677ff;
+
+    --button: #5b4bdb;
+
+    --button-hover: #4435b5;
+
+    --board: #02020c;
+
+    --grid-color: rgba(100, 120, 255, 0.18);
+
+    --piece-I: #00eaff;
+
+    --piece-O: #ffe600;
+
+    --piece-T: #c45cff;
+
+    --piece-L: #ff8c42;
+
+    --piece-J: #5271ff;
+
+    --piece-S: #52ff9a;
+
+    --piece-Z: #ff4f81;
+}
+
+
+/* =====================================================
+   SET 3 - NATURALEZA
+   ===================================================== */
+
+body.set-naturaleza {
+
+    --background: #0b2417;
+
+    --panel: #153d26;
+
+    --text: #f4ffe9;
+
+    --secondary-text: #c5e8c9;
+
+    --border: #7acb78;
+
+    --button: #2e8b57;
+
+    --button-hover: #246b45;
+
+    --board: #07140d;
+
+    --grid-color: rgba(100, 200, 120, 0.15);
+
+    --piece-I: #55e6d1;
+
+    --piece-O: #f1df62;
+
+    --piece-T: #b57cff;
+
+    --piece-L: #ff9f43;
+
+    --piece-J: #5c8cff;
+
+    --piece-S: #5ee85e;
+
+    --piece-Z: #ff6666;
+}
+
+
+/* =====================================================
+   SET 4 - NEÓN
+   ===================================================== */
+
+body.set-neon {
+
+    --background: #08000f;
+
+    --panel: #170021;
+
+    --text: #ffffff;
+
+    --secondary-text: #f0caff;
+
+    --border: #ff00e6;
+
+    --button: #ff00e6;
+
+    --button-hover: #c000ad;
+
+    --board: #020006;
+
+    --grid-color: rgba(255, 0, 230, 0.20);
+
+    --piece-I: #00f7ff;
+
+    --piece-O: #fff000;
+
+    --piece-T: #d500ff;
+
+    --piece-L: #ff7b00;
+
+    --piece-J: #4169ff;
+
+    --piece-S: #00ff66;
+
+    --piece-Z: #ff0055;
+}
+
+
+/* =====================================================
+   SET 5 - RETRO
+   ===================================================== */
+
+body.set-retro {
+
+    --background: #f3e7c9;
+
+    --panel: #d7c29e;
+
+    --text: #30251a;
+
+    --secondary-text: #5d4b36;
+
+    --border: #5d4b36;
+
+    --button: #8b4513;
+
+    --button-hover: #6f360f;
+
+    --board: #211b16;
+
+    --grid-color: rgba(255, 230, 180, 0.12);
+
+    --piece-I: #3fc1c9;
+
+    --piece-O: #f6d743;
+
+    --piece-T: #a85cff;
+
+    --piece-L: #f08a24;
+
+    --piece-J: #4267b2;
+
+    --piece-S: #61c454;
+
+    --piece-Z: #df4b4b;
+}
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =====================================================
+   CONTENEDOR
+   ===================================================== */
+
+.game-container {
+
+    width: 380px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: var(--panel);
+
+    border: 2px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =====================================================
+   TÍTULO
+   ===================================================== */
+
+h1 {
+
+    margin-bottom: 20px;
+
+    font-size: 42px;
+
+    letter-spacing: 5px;
+
+    color: var(--text);
+
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   SELECTOR
+   ===================================================== */
+
+.controls {
+
+    margin-bottom: 18px;
+}
+
+
+.controls label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    color: var(--secondary-text);
+}
+
+
+#setSelector {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: 2px solid var(--border);
+
+    border-radius: 7px;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+#setSelector:focus {
+
+    box-shadow:
+        0 0 0 2px var(--button);
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+   ===================================================== */
+
+.game-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 300px;
+
+    margin: 0 auto 12px;
+}
+
+
+.game-info div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 110px;
+
+    padding: 8px;
+
+    border-radius: 7px;
+
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+.game-info span:first-child {
+
+    font-size: 13px;
+
+    color: var(--secondary-text);
+}
+
+
+.game-info span:last-child {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   TABLERO
+   ===================================================== */
+
+#tetris {
+
+    display: block;
+
+    width: 300px;
+
+    height: 600px;
+
+    margin: 0 auto;
+
+    background-color: var(--board);
+
+    border: 4px solid var(--border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =====================================================
+   BOTÓN
+   ===================================================== */
+
+#startButton {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: var(--button);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+#startButton:hover {
+
+    background-color: var(--button-hover);
+
+    transform: translateY(-1px);
+}
+
+
+#startButton:active {
+
+    transform: translateY(1px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 450px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+
+    .game-container {
+
+        width: 100%;
+
+        padding: 15px;
+    }
+
+
+    h1 {
+
+        font-size: 34px;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris - Grupo 6</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>TETRIS</h1>
+
+        <div class="controls">
+
+            <label for="setSelector">Seleccionar Set:</label>
+
+            <select id="setSelector">
+                <option value="clasico">Set Clásico</option>
+                <option value="espacial">Set Espacial</option>
+                <option value="naturaleza">Set Naturaleza</option>
+                <option value="neon">Set Neón</option>
+                <option value="retro">Set Retro</option>
+            </select>
+
+        </div>
+
+        <div class="game-info">
+
+            <div>
+                <span>Puntuación:</span>
+                <span id="score">0</span>
+            </div>
+
+            <div>
+                <span>Líneas:</span>
+                <span id="lines">0</span>
+            </div>
+
+        </div>
+
+        <canvas id="tetris" width="300" height="600"></canvas>
+
+        <button id="startButton">Iniciar Juego</button>
+
+    </div>
+
+    <script src="js/tetris.js"></script>
+
+</body>
+</html>
